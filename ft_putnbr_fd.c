@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Untitled-1                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afontain <afontain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:05:50 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/06 18:05:50 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/15 17:17:23 by afontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483648)
+	unsigned int	x;
+
+	if (n < 0)
 	{
-		ft_putchar_fd("-2147483648", fd);
-		return ;
+		write(fd, "-", 1);
+		x = n * -1;
 	}
-	else if (n < 0)
+	else
+		x = n;
+	if (x > 9)
 	{
-		ft_putchar_fd("-", fd);
-		n = -n;
-		ft_putchar_fd(n, fd)
+		ft_putnbr_fd(x / 10, fd);
+		ft_putnbr_fd(x % 10, fd);
 	}
-	if (n > 9)
+	else
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10, fd);
-	}
-	else if (n >= 0 && n < 10)
-	{
-		ft_putchar_fd(n + '0', fd);
+		ft_putchar_fd(x + '0', fd);
 	}
 }

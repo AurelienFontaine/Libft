@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afontain <afontain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 14:44:07 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/29 19:32:47 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/15 19:11:45 by afontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <string.h>
+# include <stdint.h>
 
 void	*ft_memset(void *str, int c, size_t n);
 void	ft_bzero(void *str, size_t n);
@@ -38,10 +39,8 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *str);
-
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Untitled-1                                         :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afontain <afontain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:34:57 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/06 14:34:57 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/14 14:17:30 by afontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	j;
 	char	*dest;
+	char	*str1;
 
+	str1 = (char *)s1;
 	i = 0;
-	if (!s1 || !set)
+	if (!str1 || !set)
 		return (NULL);
-	while (s1[i] && ft_strchr(set, s1[i]))
+	while (str1[i] && ft_strchr(set, str1[i]))
 		i++;
-	j = ft_strlen(s1) - 1;
-	while (j && ft_strchr(set, s1[j]))
+	j = ft_strlen(str1) - 1;
+	while (j && ft_strchr(set, str1[j]))
 		j--;
-	dest = ft_substr((char *)s1, i, j - i + 1);
+	dest = ft_substr((char *)str1, i, j - i + 1);
 	return (dest);
 }
-
-
-	i = 0;
-	dest = malloc(sizeof(char *) * (ft_strlen(s1) - 2*(ft_strlen(set)) + 1));
-	if (!dest)
-		return (NULL);
-	while (s1[i] == set[i])
-		i++;
-	k = i;
-	i = ft_strlen(s1);
-	j = ft_strlen(set);
-	while (s1[i] == set[j])
-	{
-		i--;
-		j--;
-	}
-	j = 0;
-	while (k <= i )
-		dest[j++] = s1[k++];
-	dest[j] = '\0';
-	return (dest);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afontain <afontain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 15:44:28 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/30 15:44:28 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/17 13:51:56 by afontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,3 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	}
 	return (NULL);
 }
-/*
-int main () 
-{
-	const char str[20] = "TutorialsPoint";
-	const char to_find[10] = "to";
-	char *result;
-	result = ft_strnstr(str, to_find, 4);
-	printf("The substring is: %s\n", result);
- 	return(0);
-}
-*/

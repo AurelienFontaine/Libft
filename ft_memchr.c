@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afontain <afontain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:08:20 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/03 18:08:20 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/15 19:27:41 by afontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t		i;
 
 	i = 0;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	str = s;
 	while (i < n)

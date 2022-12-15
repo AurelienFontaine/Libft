@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Untitled-1                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afontain <afontain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:03:10 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/26 16:03:10 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/17 13:49:01 by afontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	char		*dest;
-	const char	*source;
-	size_t		i;
+	size_t			i;
 
-	i = 0;
-	dst = dest;
-	source = src;
-	if (dst <= source)
+	if (!dest || !src)
+		return (NULL);
+	if (dest > src)
 	{
-		while (i < n)
+		while (len > 0)
 		{
-			dst[i] = source[i];
+			((char *)dest)[len - 1] = ((char *)src)[len - 1];
+			len--;
+		}
+	}
+	else
+	{
+		i = 0;
+		while (i < len)
+		{
+			((char *)dest)[i] = ((char *)src)[i];
 			i++;
 		}
 	}
-	else 
-		while (n > 0)
-		{
-			dst[n] = source[n];
-			n--;
-		}
 	return (dest);
 }

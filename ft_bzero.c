@@ -3,23 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afontain <afontain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:30:50 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/20 18:30:50 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/17 13:54:07 by afontain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *str, size_t n)
 {
-    size_t  i;
+	size_t	i;
+	char	*s;
 
-    i = 0;
-    while (i < n)
-    {  
-        str[i] = 0;
-        i++;
-    }
+	s = str;
+	if (!s)
+		return ;
+	i = 0;
+	while (i < n)
+	{
+		s[i] = 0;
+		i++;
+	}
 }
