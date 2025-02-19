@@ -1,2 +1,2 @@
 # Libft
-Premier projet de 42 : coder notre propre librairie de fonction, réaliser avec les bonus : 125/125
+Premier projet de 42 : Coder notre propre librairie de fonction C, réaliser avec les bonus : 125/125
